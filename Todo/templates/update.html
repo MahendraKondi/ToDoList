@@ -1,0 +1,20 @@
+
+<body style="background-color:#baccbf;">
+
+<h1>Update Task</h1>
+<form method='POST' action = ''>
+{% csrf_token %}
+   {{taskform}}
+
+   <input  class="btn" type="submit" name="create_task">
+
+</form>
+
+
+{% for task in tasks %}
+
+<h2>Task </h2>{{task}}<br>
+
+{% endfor %}
+
+</body>

@@ -1,0 +1,12 @@
+<body style="background-color:#baccbf;">
+<h1>Delete Task</h1>
+
+<p>Are you sure you want to delete this task <b>{{task}}</b></p>
+
+<form method='POST' action="">
+    {% csrf_token %}
+    <input type="submit" name="confirm deletion">
+</form>
+
+<a href="{% url 'home' %}"> Cancel </a>
+</body>

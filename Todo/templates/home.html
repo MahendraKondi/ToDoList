@@ -1,0 +1,29 @@
+<body style="background-color:#baccbf;">
+   
+<h1 style="text-align:center;">To Do List</h1>
+<br><br>
+<form method='POST' action = '/'>
+{% csrf_token %}
+   {{taskform.title}}
+    <br>
+   <input  class="btn" type="submit" name="create_task">
+
+</form>
+
+
+{% for task in tasks %}
+
+<h3>Task </h3><h2>{{task}}</h2>
+    {% if task.completed %}
+        <p>Task is completed</p>
+    {% else %}
+        <p>Task is not completed</p>
+    {% endif %}
+    
+    <a href="{% url 'updatetask' task.id %}">Update</a>
+    <br>
+    <a href="{% url 'deletetask' task.id %}">Delete</a>
+{% endfor %}
+
+
+</body>
